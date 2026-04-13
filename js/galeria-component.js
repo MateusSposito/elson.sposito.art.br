@@ -92,6 +92,27 @@ const acervoObras = [
                "assets/obras/20260411_192533.jpg"],
         videoID: "D_O25VjCPGc",
         linkML: "https://www.mercadolivre.com.br/escultura-gepeto-e-pinoquio-com-25cm--elson-sposito/up/MLBU3891231155"
+    },
+    {
+        id: 5,
+        titulo: "Chaplin com Balão",
+        categoria: "Cinema",
+        colecao: "Personagens",
+        descricao: "Uma obra que desafia a gravidade e celebra a poesia do cinema mudo.",
+        dimensoes: "7,5cm x 14,5cm x 42cm",
+        peso: "1,26kg",
+        materiais: "Arame, Tela de Alumínio, Solda Plástica, Celulose e Arenito",
+        fotos: [
+               "assets/obras/20260226_154546.jpg",
+               "assets/obras/20260226_154613.jpg",
+               "assets/obras/20260226_154624.jpg",
+               "assets/obras/20260226_154635.jpg",
+               "assets/obras/20260226_154705.jpg",
+               "assets/obras/20260226_154715.jpg",
+               "assets/obras/20260226_154722.jpg",
+               "assets/obras/20260226_154727.jpg"],
+        videoID: "9SQCvju9HpU",
+        linkML: "https://www.mercadolivre.com.br/escultura-original-charles-chaplin-balao-42cm-elson-sposito/up/MLBU3809435949"
     }
 ];
 
