@@ -50,6 +50,29 @@ const acervoObras = [
         videoID: "jDEapkXko7U",
         linkML: "https://www.mercadolivre.com.br/escultura-paleta-de-brincadeiras-30cm--arte-elson-sposito/up/MLBU3896961386"
     }
+     {
+        id: 3,
+        titulo: "Coleção Leitura aa Pedra",
+        categoria: "Brincadeiras",
+        colecao: "Leitura Na Pedra",
+        descricao: "Cada peça captura uma cena diferente e lúdica de crianças imersas no mundo dos livros.",
+        dimensoes: "Entre 7cm e 21cm de altura",
+        peso: "Entre 153g e 376g",
+        materiais: "Arame, Tela de Arame, Solda Plástica, Celulose e Base de Pedra Natural",
+        fotos: ["assets/obras/Paleta01.jpg",
+               "assets/obras/Paleta02.jpg",
+               "assets/obras/20260410_144129.jpg",
+               "assets/obras/20260410_141552.jpg",
+               "assets/obras/20260410_141729.jpg",
+               "assets/obras/20260410_141855.jpg",
+               "assets/obras/20260410_142011.jpg",
+               "assets/obras/20260410_142218.jpg",
+               "assets/obras/20260411_113734.jpg",
+               "assets/obras/20260411_113855.jpg",
+               "assets/obras/20260411_113927.jpg"],
+        videoID: "wy6VK2fFD8Q",
+        linkML: "https://www.mercadolivre.com.br/escultura-da-colecao-lendo-na-pedra/up/MLBU3890491927"
+    }
 ];
 
 let obraAtual = null;
