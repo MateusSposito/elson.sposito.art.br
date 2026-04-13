@@ -159,24 +159,32 @@ window.abrirModal = function(id) {
     obraAtual = acervoObras.find(item => item.id === id);
     mostrandoVideo = false;
     
-    document.getElementById('m-titulo').innerText = obraAtual.titulo;
-    document.getElementById('m-desc').innerText = obraAtual.descricao;
-    document.getElementById('m-mat').innerText = obraAtual.materiais;
-    document.getElementById('m-dim').innerText = obraAtual.dimensoes;
-    document.getElementById('m-peso').innerText = obraAtual.peso;
-    document.getElementById('m-link').href = obraAtual.linkML;
-    
-    const btnVideo = document.getElementById('btn-alternar');
-    btnVideo.style.display = obraAtual.videoID ? 'block' : 'none';
-    btnVideo.innerText = "🎬 Ver Vídeo da Peça";
+    // ... (restante do código de preencher textos) ...
 
-    exibirFoto();
+    exibirFoto(0); // Garante que começa na primeira foto (índice 0)
     document.getElementById('modalObra').style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // Trava o scroll do fundo
 }
 
-function exibirFoto() {
-    document.getElementById('container-media').innerHTML = `<img src="${obraAtual.foto}" alt="${obraAtual.titulo}">`;
+function exibirFoto(index = 0) {
+    const container = document.getElementById('container-media');
+    
+    // Gera a imagem principal
+    let html = `<img src="${obraAtual.fotos[index]}" style="width: 100%; height: 100%; object-fit: contain;">`;
+    
+    // Se tiver mais de uma foto, adiciona as miniaturas embaixo
+    if (obraAtual.fotos.length > 1) {
+        html += `<div style="display: flex; justify-content: center; gap: 10px; padding: 10px; background: rgba(0,0,0,0.05);">`;
+        obraAtual.fotos.forEach((foto, i) => {
+            html += `
+                <img src="${foto}" 
+                     onclick="exibirFoto(${i})" 
+                     style="width: 50px; height: 50px; object-fit: cover; cursor: pointer; border: 2px solid ${i === index ? '#1e3a8a' : 'transparent'}; border-radius: 5px;">
+            `;
+        });
+        html += `</div>`;
+    }
+    
+    container.innerHTML = html;
     mostrandoVideo = false;
 }
 
