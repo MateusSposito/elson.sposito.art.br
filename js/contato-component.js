@@ -1,16 +1,61 @@
 /**
  * Componente de Contato e Redes - Elson Sposito
- * Injeta a seção de contato com YouTube, Instagram e Mercado Livre.
+ * Injeta a seção de contato com estilo de card personalizado.
  */
 function renderContato() {
     const contatoContainer = document.getElementById('contato-placeholder');
     
     if (contatoContainer) {
         contatoContainer.innerHTML = `
+            <style>
+                /* Estilo do Card (Sombra e Borda Arredondada) */
+                #contato .custom-card {
+                    background-color: white;
+                    border-radius: 1rem; /* rounded-2xl */
+                    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+                    padding: 2rem; /* p-8 */
+                }
+                
+                @media (min-width: 768px) {
+                    #contato .custom-card {
+                        padding: 2.5rem; /* md:p-10 */
+                    }
+                }
+
+                /* Estilo do Título Principal (Azul Escuro e Maior) */
+                #contato .section-title {
+                    color: #1e3a8a; /* blue-900 ou similar ao azul do seu print */
+                    font-size: 2.25rem; /* text-4xl */
+                    font-weight: 700; /* font-bold */
+                    margin-bottom: 2.5rem; /* mb-10 */
+                    text-align: center;
+                }
+
+                /* Subtítulo "Onde nos encontrar" */
+                #contato .sub-title {
+                    font-size: 1.25rem; /* text-xl */
+                    font-weight: 700; /* font-bold */
+                    color: #1f2937; /* gray-800 */
+                    margin-bottom: 1.5rem; /* mb-6 */
+                    text-align: center;
+                }
+
+                /* Texto de descrição */
+                #contato .description-text {
+                    font-size: 1.125rem; /* text-lg */
+                    color: #374151; /* gray-700 */
+                    line-height: 1.625; /* leading-relaxed */
+                    margin-bottom: 2rem; /* mb-8 */
+                    text-align: center;
+                }
+            </style>
+
             <section id="contato" class="mb-16">
-                <div class="card p-8 md:p-10 text-center">
-                    <h2 class="section-title mb-10">Entre em Contato</h2>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                <div class="custom-card text-center">
+                    
+                    <h2 class="section-title">Entre em Contato</h2>
+                    
+                    <p class="description-text">
                         Para encomendas personalizadas ou dúvidas, entre em contato diretamente. Se deseja acompanhar o processo de criação ou adquirir uma peça pronta, visite nossos canais abaixo.
                     </p>
                     
@@ -20,7 +65,8 @@ function renderContato() {
                         </a>
                     </div>
 
-                    <h3 class="text-xl font-bold text-gray-800 mb-6">Onde nos encontrar</h3>
+                    <h3 class="sub-title">Onde nos encontrar</h3>
+                    
                     <div class="flex flex-wrap justify-center items-center gap-4">
                         
                         <a href="https://www.youtube.com/@SpositoArtBr" 
