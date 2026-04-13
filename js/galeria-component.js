@@ -49,8 +49,8 @@ const acervoObras = [
                "assets/obras/20260409_084532.jpg"],
         videoID: "jDEapkXko7U",
         linkML: "https://www.mercadolivre.com.br/escultura-paleta-de-brincadeiras-30cm--arte-elson-sposito/up/MLBU3896961386"
-    }
-     {
+    },
+    {
         id: 3,
         titulo: "Coleção Leitura aa Pedra",
         categoria: "Brincadeiras",
