@@ -8,16 +8,26 @@
 const acervoObras = [
     {
         id: 1,
-        titulo: "Gepeto com Pinóquio",
-        categoria: "Literatura",
+        titulo: "Cantando na Chuva",
+        categoria: "Cinema",
         colecao: "Clássicos",
-        descricao: "Obra rica em detalhes representando o mestre marceneiro e sua criação. Técnica em arame e tela.",
-        dimensoes: "25cm x 15cm x 15cm",
-        peso: "1,262 Kg",
-        materiais: "Arame, tela de alumínio, solda plástica, celulose e linha.",
-        foto: "assets/obras/gepeto.jpg", // Certifique-se que a foto está nesta pasta
-        videoID: "ID_DO_VIDEO", // Ex: para youtube.com/shorts/XYZ, coloque apenas XYZ
-        linkML: "https://www.mercadolivre.com.br/pagina/spositoartbr"
+        descricao: "Inspirada na famosa cena de Gene Kelly no filme 'Singin in the Rain'" .",
+        dimensoes: "15cm x 17cm x 33cm",
+        peso: "554g",
+        materiais: "Arame, tela de alumínio, solda plástica, arenito e resina epóxi.",
+        fotos: [
+            "assets/obras/20260226_154757.jpg", 
+            "assets/obras/20260226_154819.jpg",
+            "assets/obras/20260226_154918.jpg",
+            "assets/obras/20260226_154939.jpg", 
+            "assets/obras/20260226_155001.jpg",
+            "assets/obras/20260226_155008.jpg",
+            "assets/obras/20260226_155019.jpg", 
+            "assets/obras/20260226_155027.jpg",
+            "assets/obras/20260226_155042.jpg"
+        ],
+        videoID: "kDK3djcVUno", // Ex: para youtube.com/shorts/XYZ, coloque apenas XYZ
+        linkML: "https://www.mercadolivre.com.br/escultura-original-cantando-na-chuva-gene-kelly-33cm-sposito/up/MLBU3809321771"
     },
     {
         id: 2,
