@@ -1,6 +1,7 @@
 /**
  * Componente de Galeria Dinâmica com Vídeo - Elson Sposito
  * Gerencia o acervo, filtros, grid e modal com suporte a múltiplas fotos e YouTube.
+ * Layout otimizado para mobile.
  */
 
 const acervoObras = [
@@ -36,7 +37,7 @@ const acervoObras = [
         dimensoes: "7cm x 7cm x 14cm",
         peso: "153g",
         materiais: "Arame, tela metálica, solda plástica e base em pedra natural.",
-        fotos: ["assets/obras/menino_lendo_01.jpg"], // Transformado em lista para não dar erro
+        fotos: ["assets/obras/menino_lendo_01.jpg"],
         videoID: "",
         linkML: "https://www.mercadolivre.com.br/pagina/spositoartbr"
     }
@@ -53,7 +54,7 @@ function renderGaleria() {
 
     container.innerHTML = `
         <style>
-            .galeria-section { padding: 2rem 0; }
+            .galeria-section { padding: 2rem 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
             .filtros-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; }
             .btn-filtro { padding: 8px 20px; border-radius: 20px; border: 1px solid #1e3a8a; background: white; color: #1e3a8a; cursor: pointer; transition: 0.3s; font-weight: bold; }
             .btn-filtro.active, .btn-filtro:hover { background: #1e3a8a; color: white; }
@@ -64,23 +65,76 @@ function renderGaleria() {
             .obra-info { padding: 15px; text-align: center; }
             .obra-info h3 { margin: 0; color: #1e3a8a; font-size: 1.15rem; }
             
+            /* Modal Corrigido para Mobile */
             .modal-obra { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; padding: 15px; }
-            .modal-content { background: white; max-width: 1000px; width: 100%; max-height: 90vh; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; }
+            .modal-content { 
+                background: white; 
+                max-width: 1000px; 
+                width: 100%; 
+                max-height: 90vh; /* Mantém dentro da tela */
+                border-radius: 24px; 
+                overflow: hidden; 
+                display: flex; 
+                flex-direction: column; 
+            }
             @media (min-width: 768px) { .modal-content { flex-direction: row; } }
             
-            .modal-media { flex: 1.2; background: #f3f4f6; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 350px; }
-            #container-media { width: 100%; height: 100%; display: flex; flex-direction: column; }
-            .main-img { width: 100%; height: 100%; object-fit: contain; flex-grow: 1; }
-            .thumb-container { display: flex; justify-content: center; gap: 8px; padding: 10px; background: #eee; width: 100%; overflow-x: auto; }
-            .thumb { width: 50px; height: 50px; object-fit: cover; cursor: pointer; border: 2px solid transparent; border-radius: 4px; }
+            /* Lado da Mídia - Ajuste para Miniaturas */
+            .modal-media { 
+                flex: 1.2; 
+                background: #f3f4f6; 
+                position: relative; 
+                display: flex; 
+                flex-direction: column; /* Organiza em coluna (Foto em cima, miniaturas em baixo) */
+                min-height: 350px; 
+            }
+            #container-media { 
+                width: 100%; 
+                height: 100%; 
+                display: flex; 
+                flex-direction: column; 
+            }
+            .main-img { 
+                width: 100%; 
+                height: calc(100% - 70px); /* Tira 70px para dar espaço às miniaturas */
+                object-fit: contain; 
+                flex-grow: 1; 
+            }
+            
+            /* Tira de Miniaturas Fixa */
+            .thumb-container { 
+                display: flex; 
+                justify-content: center; 
+                gap: 8px; 
+                padding: 10px; 
+                background: #eee; 
+                width: 100%; 
+                height: 70px; /* Altura fixa garantida */
+                overflow-x: auto; /* Permite scroll lateral se houver muitas fotos */
+                box-sizing: border-box; 
+                flex-shrink: 0; /* Impede que o container de miniaturas seja espremido */
+            }
+            .thumb { 
+                width: 50px; 
+                height: 50px; 
+                object-fit: cover; 
+                cursor: pointer; 
+                border: 2px solid transparent; 
+                border-radius: 4px; 
+                flex-shrink: 0; 
+            }
             .thumb.active { border-color: #1e3a8a; }
 
+            /* Lado dos Detalhes */
             .modal-detalhes { flex: 1; padding: 30px; overflow-y: auto; position: relative; }
-            .close-modal { position: absolute; top: 10px; right: 20px; font-size: 35px; cursor: pointer; color: #999; z-index: 10; }
+            .close-modal { position: absolute; top: 10px; right: 20px; font-size: 35px; cursor: pointer; color: #999; z-index: 10; font-family: sans-serif; }
             .tech-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-            .tech-table td { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; }
-            .btn-ml { display: block; text-align: center; background: #ffdb15; color: #000; padding: 14px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 20px; }
-            .btn-video-toggle { width: 100%; margin-top: 10px; padding: 12px; border: 2px solid #1e3a8a; background: white; color: #1e3a8a; border-radius: 50px; cursor: pointer; font-weight: bold; }
+            .tech-table td { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; color: #555; }
+            .tech-table b { color: #1e3a8a; }
+            .btn-ml { display: block; text-align: center; background: #ffdb15; color: #000; padding: 14px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; font-family: sans-serif; }
+            .btn-ml:hover { background: #f2ce13; transform: scale(1.02); }
+            .btn-video-toggle { width: 100%; margin-top: 10px; padding: 12px; border: 2px solid #1e3a8a; background: white; color: #1e3a8a; border-radius: 50px; cursor: pointer; font-weight: bold; transition: 0.3s; font-family: sans-serif; }
+            .btn-video-toggle:hover { background: #f0f7ff; }
         </style>
 
         <div class="galeria-section">
@@ -96,7 +150,7 @@ function renderGaleria() {
                 <div class="modal-detalhes">
                     <span class="close-modal" onclick="fecharModal()">&times;</span>
                     <h2 id="m-titulo" style="color: #1e3a8a; margin-top:0;"></h2>
-                    <p id="m-desc" style="color: #666;"></p>
+                    <p id="m-desc" style="color: #666; font-size: 0.95rem; line-height: 1.5;"></p>
                     <table class="tech-table">
                         <tr><td><b>Materiais:</b></td><td id="m-mat"></td></tr>
                         <tr><td><b>Dimensões:</b></td><td id="m-dim"></td></tr>
@@ -150,12 +204,12 @@ window.abrirModal = function(id) {
 
 window.exibirFoto = function(index = 0) {
     const container = document.getElementById('container-media');
-    let html = `<img src="${obraAtual.fotos[index]}" class="main-img">`;
+    let html = `<img src="${obraAtual.fotos[index]}" class="main-img" alt="${obraAtual.titulo}">`;
     
     if (obraAtual.fotos.length > 1) {
         html += `<div class="thumb-container">`;
         obraAtual.fotos.forEach((foto, i) => {
-            html += `<img src="${foto}" class="thumb ${i === index ? 'active' : ''}" onclick="exibirFoto(${i})">`;
+            html += `<img src="${foto}" class="thumb ${i === index ? 'active' : ''}" onclick="exibirFoto(${i})" alt="${obraAtual.titulo} detalhe ${i+1}">`;
         });
         html += `</div>`;
     }
@@ -170,7 +224,18 @@ window.alternarMedia = function() {
     const btn = document.getElementById('btn-alternar');
     
     if (!mostrandoVideo) {
-        container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${obraAtual.videoID}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="flex-grow:1;"></iframe>`;
+        // Injeta o player mantendo o container com scroll de miniaturas, se houver
+        let htmlPlayer = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${obraAtual.videoID}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="flex-grow:1; border:none; height: calc(100% - 70px);"></iframe>`;
+        
+        if (obraAtual.fotos.length > 1) {
+             htmlPlayer += `<div class="thumb-container">`;
+             obraAtual.fotos.forEach((foto, i) => {
+                 htmlPlayer += `<img src="${foto}" class="thumb" onclick="exibirFoto(${i})" alt="voltar para foto ${i+1}">`;
+             });
+             htmlPlayer += `</div>`;
+        }
+        
+        container.innerHTML = htmlPlayer;
         btn.innerText = "🖼️ Ver Fotos da Peça";
         mostrandoVideo = true;
     } else {
