@@ -7,25 +7,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8f8f8; }
-        /* Paleta de Cores: Amarelo Ouro e Tons de Terra */
-        .header-bg { background: linear-gradient(135deg, #FFD700 0%, #B8860B 100%); color: #1a237e; }
-        .accent-color { color: #d97706; /* amber-600 */ }
-        .border-accent { border-color: #d97706; }
-        .hover-accent:hover { background-color: #fcd34d; }
-        .section-divider { border-top: 2px solid #fde68a; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8f8f8; scroll-behavior: smooth; }
         
-        /* Estilos adicionais para as imagens na galeria */
-        .gallery-image {
+        /* Paleta de Cores */
+        .header-bg { background: linear-gradient(135deg, #FFD700 0%, #B8860B 100%); color: #1a237e; }
+        .accent-color { color: #d97706; }
+        .border-accent { border-color: #d97706; }
+
+        /* Estilos do Sistema "Ler Mais" na Biografia */
+        .bio-container {
+            max-height: 200px; /* Altura inicial no mobile */
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.6s ease-in-out;
+        }
+
+        /* Efeito de fade quando o texto está recolhido */
+        .bio-container.recolhido::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
             width: 100%;
-            height: 12rem; /* Altura fixa para consistência visual */
-            object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+            height: 80px;
+            background: linear-gradient(transparent, #f8f8f8);
+        }
+
+        .bio-container.expandido {
+            max-height: 2000px; /* Valor alto para mostrar tudo */
+        }
+
+        #btn-ler-mais {
+            background: none;
+            border: none;
+            color: #d97706;
+            font-weight: 800;
+            cursor: pointer;
+            padding: 10px 0;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media (min-width: 768px) {
+            .bio-container { max-height: none; }
+            .bio-container.recolhido::after { display: none; }
+            #btn-ler-mais { display: none; }
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center">
 
-    <!-- Cabeçalho e Navegação -->
     <header class="w-full shadow-lg">
         <div class="header-bg py-8">
             <div class="max-w-6xl mx-auto px-4 text-center">
@@ -33,55 +67,76 @@
                 <p class="text-xl md:text-2xl font-semibold text-yellow-900 opacity-90">Esculturas com Técnicas Próprias</p>
             </div>
         </div>
-        <nav class="bg-white shadow-md">
+        <nav class="bg-white shadow-md sticky top-0 z-[100]">
             <div class="max-w-6xl mx-auto px-4 py-3 flex justify-center space-x-6">
                 <a href="#bio" class="text-gray-700 hover:text-yellow-600 font-medium transition duration-150">Biografia</a>
-                <a href="#galeria" class="text-gray-700 hover:text-yellow-600 font-medium transition duration-150">Galeria</a>
-                <a href="#contato" class="text-gray-700 hover:text-yellow-600 font-medium transition duration-150">Contato</a>
+                <a href="#galeria-placeholder" class="text-gray-700 hover:text-yellow-600 font-medium transition duration-150">Galeria</a>
+                <a href="#contato-placeholder" class="text-gray-700 hover:text-yellow-600 font-medium transition duration-150">Contato</a>
                 <a href="https://sposito.art.br" class="text-gray-700 hover:text-blue-700 font-medium transition duration-150">&larr; Portal Principal</a>
             </div>
         </nav>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <main class="w-full max-w-6xl mx-auto p-8">
+    <main class="w-full max-w-6xl mx-auto p-6 md:p-8">
 
-        <!-- Seção 1: Biografia e Raízes -->
         <section id="bio" class="mb-16 pt-8">
-            <h2 class="text-4xl font-extrabold mb-6 accent-color border-b pb-2 border-accent">Raízes da Criação</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6 accent-color border-b pb-2 border-accent">Raízes da Criação</h2>
             
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="md:col-span-2">
-                    <p class="text-lg text-gray-700 mb-4">A arte de Elson Sposito está profundamente enraizada em sua herança italiana e nas memórias afetivas. Inspirado pela simplicidade e o valor do reaproveitamento aprendido com seus antepassados, Elson desenvolveu uma técnica autoral de escultura que transforma materiais variados em obras de arte carregadas de emoção.</p>
+                    <div id="bio-text" class="bio-container recolhido">
+                        <p class="text-lg text-gray-700 mb-4">A arte de Elson Sposito está profundamente enraizada em sua herança italiana e nas memórias afetivas. Inspirado pela simplicidade e o valor do reaproveitamento aprendido com seus antepassados, Elson desenvolveu uma técnica autoral de escultura que transforma materiais variados em obras de arte carregadas de emoção.</p>
+                        
+                        <p class="text-lg text-gray-700 mb-4">Desde pedacinhos de arame reutilizado e papelão, até silicone e tintas, cada material ganha uma nova vida em suas mãos. Mais do que a matéria-prima, o elemento principal de sua criação é a **emoção**. Seus trabalhos transcendem o acadêmico, sendo um emaranhado de histórias familiares, valores recebidos e a nostalgia da infância.</p>
+                        
+                        <p class="text-lg text-gray-700">Com milhares de peças produzidas, suas esculturas já foram expostas e premiadas em diversas regiões do Brasil e do mundo, retratando desde bailarinas em poses delicadas e cenas do cotidiano, até personagens emblemáticos da literatura, como Dom Quixote, e figuras do folclore brasileiro.</p>
+                    </div>
                     
-                    <p class="text-lg text-gray-700 mb-4">Desde pedacinhos de arame reutilizado e papelão, até silicone e tintas, cada material ganha uma nova vida em suas mãos. Mais do que a matéria-prima, o elemento principal de sua criação é a **emoção**. Seus trabalhos transcendem o acadêmico, sendo um emaranhado de histórias familiares, valores recebidos e a nostalgia da infância.</p>
-                    
-                    <p class="text-lg text-gray-700">Com milhares de peças produzidas, suas esculturas já foram expostas e premiadas em diversas regiões do Brasil e do mundo, retratando desde bailarinas em poses delicadas e cenas do cotidiano, até personagens emblemáticos da literatura, como Dom Quixote, e figuras do folclore brasileiro.</p>
+                    <button id="btn-ler-mais" onclick="toggleBio()">
+                        <span>Ler biografia completa</span> ▾
+                    </button>
                 </div>
-                <!-- LOCAL DA IMAGEM DO ARTISTA -->
+
                 <div class="md:col-span-1 flex justify-center items-start">
-                    <!-- ATUALIZE 'artista.jpg' COM O NOME EXATO DO SEU ARQUIVO NA PASTA 'assets' -->
                     <img src="assets/Elson001.jpg" 
-                         alt="Foto do Artista Elson Sposito em seu atelier" 
+                         alt="Foto do Artista Elson Sposito" 
                          class="w-full max-w-xs h-64 rounded-xl shadow-xl object-cover border-4 border-yellow-600"
-                         onerror="this.onerror=null; this.src='https://placehold.co/320x256/fcd34d/6b4612?text=Foto+do+Artista+(Ajustar+Caminho)'">
+                         onerror="this.onerror=null; this.src='https://placehold.co/320x256/fcd34d/6b4612?text=Elson+Sposito'">
                 </div>
             </div>
         </section>
 
         <div id="galeria-placeholder"></div>
-        
         <div id="contato-placeholder"></div>
-        <script src="js/contato-component.js"></script>
-        
 
     </main>
 
     <footer class="w-full text-center py-6 mt-12 text-gray-500 text-sm border-t border-gray-200">
-        <p>Copyright &copy; 2025 Elson Sposito Artista Plástico. Desenvolvido pela Família Sposito.</p>
+        <p>Copyright &copy; 2026 Elson Sposito Artista Plástico. Desenvolvido pela Família Sposito.</p>
     </footer>
-    
+
+    <script>
+        // Função para expandir/recolher a biografia no mobile
+        function toggleBio() {
+            const container = document.getElementById('bio-text');
+            const btn = document.getElementById('btn-ler-mais');
+            
+            if (container.classList.contains('recolhido')) {
+                container.classList.remove('recolhido');
+                container.classList.add('expandido');
+                btn.innerHTML = '<span>Ler menos</span> ▴';
+            } else {
+                container.classList.remove('expandido');
+                container.classList.add('recolhido');
+                btn.innerHTML = '<span>Ler biografia completa</span> ▾';
+                // Faz a tela voltar suavemente para o início da bio ao fechar
+                document.getElementById('bio').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
     <script src="js/galeria-component.js"></script>
+    <script src="js/contato-component.js"></script>
 
 </body>
 </html>
