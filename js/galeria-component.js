@@ -59,7 +59,7 @@ const acervoObras = [
         dimensoes: "Entre 7cm e 21cm de altura",
         peso: "Entre 153g e 376g",
         materiais: "Arame, Tela de Arame, Solda Plástica, Celulose e Base de Pedra Natural",
-        fotos: ["assets/obras/Paleta01.jpg",
+        fotos: [
                "assets/obras/Paleta02.jpg",
                "assets/obras/20260410_144129.jpg",
                "assets/obras/20260410_141552.jpg",
