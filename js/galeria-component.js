@@ -113,6 +113,27 @@ const acervoObras = [
                "assets/obras/20260226_154727.jpg"],
         videoID: "9SQCvju9HpU",
         linkML: "https://www.mercadolivre.com.br/escultura-original-charles-chaplin-balao-42cm-elson-sposito/up/MLBU3809435949"
+    },
+    {
+        id: 6,
+        titulo: "Soltando Pipas",
+        categoria: "Brincadeiras",
+        colecao: "Brincadeiras",
+        descricao: "Esta peça captura com sensibilidade a essência da infância brasileira e a liberdade de voar sem tirar os pés do chão.",
+        dimensoes: "15cm x 7cm x 38cm",
+        peso: "380g",
+        materiais: "Arame, Tela de Alumínio, Solda Plástica, Celulose e Arenito",
+        fotos: [
+               "assets/obras/20260225_124126.jpg",
+               "assets/obras/20260225_124230.jpg",
+               "assets/obras/20260225_124306.jpg",
+               "assets/obras/20260225_124329.jpg",
+               "assets/obras/20260225_124341.jpg",
+               "assets/obras/20260225_124357.jpg",
+               "assets/obras/20260225_124421.jpg",
+               "assets/obras/20260225_124437.jpg"],
+        videoID: "vix2rNypXMk",
+        linkML: "https://www.mercadolivre.com.br/escultura-criancas-empinando-pipa--elson-sposito--38cm/up/MLBU3806343293"
     }
 ];
 
