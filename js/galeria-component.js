@@ -71,6 +71,27 @@ const acervoObras = [
                "assets/obras/20260411_113927.jpg"],
         videoID: "wy6VK2fFD8Q",
         linkML: "https://www.mercadolivre.com.br/escultura-da-colecao-lendo-na-pedra/up/MLBU3890491927"
+    },
+    {
+        id: 4,
+        titulo: "Gepeto com Pinóquio",
+        categoria: "Literatura",
+        colecao: "Personagens",
+        descricao: "Uma obra de arte que captura a essência da criação e do afeto. A clássica cena de Gepeto dando vida ao Pinóquio.",
+        dimensoes: "15cm x 15cm x 25cm",
+        peso: "1,26kg",
+        materiais: "Arame, Tela de Alumínio, Solda Plástica, Celulose, Linha e Base de Pedra Natura",
+        fotos: [
+               "assets/obras/20260411_192311.jpg",
+               "assets/obras/20260411_192342.jpg",
+               "assets/obras/20260411_192357.jpg",
+               "assets/obras/20260411_192413.jpg",
+               "assets/obras/20260411_192439.jpg",
+               "assets/obras/20260411_192500.jpg",
+               "assets/obras/20260411_192512.jpg",
+               "assets/obras/20260411_192533.jpg"],
+        videoID: "D_O25VjCPGc",
+        linkML: "https://www.mercadolivre.com.br/escultura-gepeto-e-pinoquio-com-25cm--elson-sposito/up/MLBU3891231155"
     }
 ];
 
