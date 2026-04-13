@@ -52,7 +52,7 @@ const acervoObras = [
     },
     {
         id: 3,
-        titulo: "Coleção Leitura aa Pedra",
+        titulo: "Coleção Leitura na Pedra",
         categoria: "Brincadeiras",
         colecao: "Leitura Na Pedra",
         descricao: "Cada peça captura uma cena diferente e lúdica de crianças imersas no mundo dos livros.",
