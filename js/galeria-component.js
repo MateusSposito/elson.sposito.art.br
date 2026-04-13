@@ -60,7 +60,6 @@ const acervoObras = [
         peso: "Entre 153g e 376g",
         materiais: "Arame, Tela de Arame, Solda Plástica, Celulose e Base de Pedra Natural",
         fotos: [
-               "assets/obras/Paleta02.jpg",
                "assets/obras/20260410_144129.jpg",
                "assets/obras/20260410_141552.jpg",
                "assets/obras/20260410_141729.jpg",
