@@ -29,16 +29,26 @@ const acervoObras = [
     },
     {
         id: 2,
-        titulo: "Menino Lendo 01",
-        categoria: "Cotidiano",
-        colecao: "Leitura na Pedra",
-        descricao: "Peça número 1 da coleção Leitura na Pedra, focada no incentivo à leitura.",
-        dimensoes: "7cm x 7cm x 14cm",
-        peso: "153g",
-        materiais: "Arame, tela metálica, solda plástica e base em pedra natural.",
-        fotos: ["assets/obras/menino_lendo_01.jpg"],
-        videoID: "",
-        linkML: "https://www.mercadolivre.com.br/pagina/spositoartbr"
+        titulo: "Paleta de Brincadeiras",
+        categoria: "Brincadeiras",
+        colecao: "Paleta De Brincadeiras",
+        descricao: "Uma obra de arte que celebra a essência da infância e a criatividade. A base em formato de paleta de pintor serve como cenário para personagens que, como se surgissem das tintas, imortalizam brincadeiras clássicas.",
+        dimensoes: "20cm x 23cm x 30cm",
+        peso: "240g",
+        materiais: "Arame, Tela Metálica, Solda Plástica, Celulose, Silicone e MDF",
+        fotos: ["assets/obras/Paleta01.jpg",
+               "assets/obras/Paleta02.jpg",
+               "assets/obras/20260409_084439.jpg",
+               "assets/obras/20260409_084446.jpg",
+               "assets/obras/20260409_084423.jpg",
+               "assets/obras/20260409_084430.jpg",
+               "assets/obras/20260409_084455.jpg",
+               "assets/obras/20260409_084505.jpg",
+               "assets/obras/20260409_084513.jpg",
+               "assets/obras/20260409_084523.jpg",
+               "assets/obras/20260409_084532.jpg"],
+        videoID: "jDEapkXko7U",
+        linkML: "https://www.mercadolivre.com.br/escultura-paleta-de-brincadeiras-30cm--arte-elson-sposito/up/MLBU3896961386"
     }
 ];
 
