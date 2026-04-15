@@ -5,6 +5,28 @@
 
 const acervoObras = [
     {
+        id: 6,
+        titulo: "Brincando de Girar",
+        categoria: "Brincadeiras",
+        colecao: "Brincadeiras",
+        descricao: "A escultura 'Brincando de Girar' retrata aquela sensação clássica de liberdade da infância.",
+        dimensoes: "19cm x 9cm x 19cm",
+        peso: "388g",
+        materiais: "Arame, tela de alumínio, solda plástica, esponja de aço, arenito e resina epóxi.",
+        fotos: [
+            "assets/obras/20260414_094603.jpg", 
+            "assets/obras/20260414_094721.jpg",
+            "assets/obras/20260414_094733.jpg",
+            "assets/obras/20260414_094802.jpg", 
+            "assets/obras/20260414_094818.jpg",
+            "assets/obras/20260414_094824.jpg",
+            "assets/obras/20260414_094832.jpg", 
+        ],
+        videoID: "NF3KqKJB89g",
+        linkML: "https://www.mercadolivre.com.br/escultura-brincando-de-girar-19cm--elson-sposito/up/MLBU3896588781"
+    },
+    
+    {
         id: 1,
         titulo: "Cantando na Chuva",
         categoria: "Cinema",
