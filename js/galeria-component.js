@@ -4,6 +4,28 @@
  */
 
 const acervoObras = [
+     {
+        id: 7,
+        titulo: "Pescador Suspenso",
+        categoria: "Cotidiano",
+        colecao: "Distensão da Perspectiva",
+        descricao: "O momento da fisgada eternizada em uma disposição que desafia a gravidade.",
+        dimensoes: "38cm x 12cm x 16cm",
+        peso: "199g",
+        materiais: "Arame, tela de alumínio, solda plástica, arenito e resina epóxi.",
+        fotos: [
+            "assets/obras/20260414_165246.jpg", 
+            "assets/obras/20260414_102707.jpg",
+            "assets/obras/20260414_102523.jpg",
+            "assets/obras/20260414_102335.jpg", 
+            "assets/obras/20260414_102357.jpg",
+            "assets/obras/20260414_102558.jpg",
+            "assets/obras/20260414_102722.jpg",
+            "assets/obras/20260414_165403.jpg", 
+        ],
+        videoID: "anA5Fo5CQkY",
+        linkML: "https://www.mercadolivre.com.br/escultura-pescador-suspenso-38cm--elson-sposito/up/MLBU3897748109?pdp_filters=item_id:MLB4609655449"
+    },
     {
         id: 6,
         titulo: "Brincando de Girar",
