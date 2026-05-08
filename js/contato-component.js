@@ -1,74 +1,32 @@
 /**
- * Componente de Contato e Redes - Elson Sposito
- * Injeta a seção de contato com estilo de card personalizado.
+ * Componente de Contato e Redes - Mateus Sposito
+ * Injeta a seção de contato com YouTube, Instagram, Facebook e Mercado Livre.
  */
 function renderContato() {
     const contatoContainer = document.getElementById('contato-placeholder');
     
     if (contatoContainer) {
         contatoContainer.innerHTML = `
-            <style>
-                /* Estilo do Card (Sombra e Borda Arredondada) */
-                #contato .custom-card {
-                    background-color: white;
-                    border-radius: 1rem; /* rounded-2xl */
-                    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-                    padding: 2rem; /* p-8 */
-                }
-                
-                @media (min-width: 768px) {
-                    #contato .custom-card {
-                        padding: 2.5rem; /* md:p-10 */
-                    }
-                }
-
-                /* Estilo do Título Principal (Azul Escuro e Maior) */
-                #contato .section-title {
-                    color: #1e3a8a; /* blue-900 ou similar ao azul do seu print */
-                    font-size: 2.25rem; /* text-4xl */
-                    font-weight: 700; /* font-bold */
-                    margin-bottom: 2.5rem; /* mb-10 */
-                    text-align: center;
-                }
-
-                /* Subtítulo "Onde nos encontrar" */
-                #contato .sub-title {
-                    font-size: 1.25rem; /* text-xl */
-                    font-weight: 700; /* font-bold */
-                    color: #1f2937; /* gray-800 */
-                    margin-bottom: 1.5rem; /* mb-6 */
-                    text-align: center;
-                }
-
-                /* Texto de descrição */
-                #contato .description-text {
-                    font-size: 1.125rem; /* text-lg */
-                    color: #374151; /* gray-700 */
-                    line-height: 1.625; /* leading-relaxed */
-                    margin-bottom: 2rem; /* mb-8 */
-                    text-align: center;
-                }
-            </style>
-
+            <!-- Contact Section -->
             <section id="contato" class="mb-16">
-                <div class="custom-card text-center">
-                    
-                    <h2 class="section-title">Entre em Contato</h2>
-                    
-                    <p class="description-text">
+                <div class="card p-8 md:p-10 text-center">
+                    <h2 class="section-title mb-10">Entre em Contato</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
                         Para encomendas personalizadas ou dúvidas, entre em contato diretamente. Se deseja acompanhar o processo de criação ou adquirir uma peça pronta, visite nossos canais abaixo.
                     </p>
                     
+                    <!-- E-MAIL BUTTON -->
                     <div class="mb-12">
-                        <a href="mailto:elson@sposito.art.br" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 px-10 rounded-full transition-all duration-300 shadow-md inline-block transform hover:-translate-y-1">
+                        <a href="mailto:mateus@sposito.art.br" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 px-10 rounded-full transition-all duration-300 shadow-md inline-block transform hover:-translate-y-1">
                             Enviar E-mail
                         </a>
                     </div>
 
-                    <h3 class="sub-title">Onde nos encontrar</h3>
-                    
+                    <!-- REDES E LOJAS -->
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Onde nos encontrar</h3>
                     <div class="flex flex-wrap justify-center items-center gap-4">
                         
+                        <!-- YouTube -->
                         <a href="https://www.youtube.com/@SpositoArtBr" 
                            target="_blank" 
                            class="bg-[#FF0000] hover:bg-[#CC0000] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md w-full sm:w-auto flex items-center justify-center space-x-2 transform hover:-translate-y-1">
@@ -76,6 +34,7 @@ function renderContato() {
                             <span>YouTube</span>
                         </a>
 
+                        <!-- Instagram -->
                         <a href="https://www.instagram.com/sposito.art.br" 
                            target="_blank" 
                            class="bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] hover:opacity-90 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md w-full sm:w-auto flex items-center justify-center space-x-2 transform hover:-translate-y-1">
@@ -83,6 +42,15 @@ function renderContato() {
                             <span>Instagram</span>
                         </a>
 
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/profile.php?id=61558753411464" 
+                           target="_blank" 
+                           class="bg-[#1877F2] hover:bg-[#166fe5] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md w-full sm:w-auto flex items-center justify-center space-x-2 transform hover:-translate-y-1">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            <span>Facebook</span>
+                        </a>
+
+                        <!-- Mercado Livre -->
                         <a href="https://www.mercadolivre.com.br/pagina/spositoartbr#from=share_eshop" 
                            target="_blank" 
                            class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md w-full sm:w-auto transform hover:-translate-y-1">
